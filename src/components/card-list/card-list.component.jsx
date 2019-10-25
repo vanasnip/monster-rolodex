@@ -3,12 +3,20 @@ import './card-list.styles.css';
 import { Card } from '../card/card.component';
 
 
-export const CardList = ({ monsters }) => {
+export const CardList = ({ monsters, search }) => {
+  const reg = new RegExp(search, "g");
   return (<div className="card-list">
     {
-      monsters.map(monster => (
-        <Card key={monster.id} monster={monster}/>
-      ))
+      monsters.map(monster =>
+        <Card key={monster.id} monster={monster} />
+      )
     }
   </div>);
+}
+
+function match(source, search) {
+  console.log(search)
+  source = source.toLowerCase();
+  search = search.toLowerCase();
+  return source.indexOf(search) > -1;
 }
