@@ -13,10 +13,3 @@ export const CardList = ({ monsters, search }) => {
     }
   </div>);
 }
-
-function match(source, search) {
-  console.log(search)
-  source = source.toLowerCase();
-  search = search.toLowerCase();
-  return source.indexOf(search) > -1;
-}
